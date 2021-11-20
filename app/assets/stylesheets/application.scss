@@ -4,6 +4,13 @@ h1 {
   color: pink;
 }
 
+.nav-item {
+  font-weight: bold;
+}
+.nav-item:hover {
+  opacity: 0.3;
+}
+
 @media screen and (max-width:425px) {
   h1 {
     color: blue;
