@@ -1,6 +1,7 @@
 h1 {
   color: pink;
 }
+
 @media screen and (max-width:425px) {
   h1 {
     color: blue;
