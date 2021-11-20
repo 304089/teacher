@@ -1,0 +1,16 @@
+<div class="contents" >
+  <%= link_to '動画を投稿する', new_post_path %>
+  <div class="contents__content">
+    <% @posts.each do |post| %>
+      <div class="contents__content">
+        <table>
+          <tr>
+            <td>
+              <iframe src="https://www.youtube.com/embed/<%= post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </td>
+          </tr>
+        </table>
+      </div>
+    <% end %>
+  </div>
+</div>
