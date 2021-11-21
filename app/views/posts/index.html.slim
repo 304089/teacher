@@ -1,0 +1,11 @@
+.contents
+  = link_to '授業を投稿する', new_post_path
+  .contents__content
+    - @posts.each do |post|
+      .contents__content
+        table
+          tr
+            td
+              |  <iframe src="https://www.youtube.com/embed/
+              = post.youtube_url
+              | " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
