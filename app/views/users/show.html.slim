@@ -1,3 +1,33 @@
 = flash[:notice]
-= link_to new_post_path do
-  div.btn.btn-success 授業を投稿する
+.container
+  .profile
+    .profile__icon
+      = attachment_image_tag @user, :profile_image, size: "200x200", fallback: "no_image.jpg", class: "rounded-circle"
+    .profile__name
+      = @user.name
+    .profile__list
+      ul
+        li
+          = @user.name
+          p フォロワー
+        li い
+        li う
+    .profile__introduction
+      p あああああああああ
+  .tab-area
+    .tab.active
+      タブ１
+    .tab
+      タブ２
+    .tab
+      タブ３
+  .content-area
+    .content.show
+      タブ１の中身です
+    .content
+      タブ２の中身です
+    .content
+      タブ３の中身です
+  .link-area
+    = link_to new_post_path do
+      .btn.btn-success 授業を投稿する
