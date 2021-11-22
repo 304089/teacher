@@ -1,7 +1,4 @@
 class PostsController < ApplicationController
-  def index
-    @posts = Post.all
-  end
 
   def new
     @post = Post.new
@@ -15,6 +12,14 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     @post.save
     redirect_to posts_path
+  end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def index
+    @posts = Post.all
   end
 
   private

@@ -1,10 +1,9 @@
-.contents
-  = link_to '授業を投稿する', new_post_path
-  .contents__content
+.container
+  .contents
     - @posts.each do |post|
       = link_to post_path(post) do
-        .contents__content__list
-          .contents__content__list__title
+        .contents__list
+          .contents__list__title
             = post.title
-          .contents__content__thumbnail
+          .contents__list__thumbnail
             img src="http://img.youtube.com/vi/#{post.youtube_url}/hqdefault.jpg"
