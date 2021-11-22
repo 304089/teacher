@@ -1,18 +1,18 @@
 = flash[:notice]
 .container
-  .profile
-    .profile__icon
+  .profile-area
+    .profile-area__icon
       = attachment_image_tag @user, :profile_image, size: "200x200", fallback: "no_image.jpg", class: "rounded-circle"
-    .profile__name
+    .profile-area__name
       = @user.name
-    .profile__list
+    .profile-area__list
       ul
         li
           = @user.name
           p フォロワー
         li い
         li う
-    .profile__introduction
+    .profile-area__introduction
       p あああああああああ
   .tab-area
     .tab.active

@@ -2,10 +2,9 @@
   = link_to '授業を投稿する', new_post_path
   .contents__content
     - @posts.each do |post|
-      .contents__content
-        table
-          tr
-            td
-              |  <iframe src="https://www.youtube.com/embed/
-              = post.youtube_url
-              | " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      = link_to post_path(post) do
+        .contents__content__list
+          .contents__content__list__title
+            = post.title
+          .contents__content__thumbnail
+            img src="http://img.youtube.com/vi/#{post.youtube_url}/hqdefault.jpg"

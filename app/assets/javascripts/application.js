@@ -26,5 +26,5 @@ $(function() {
     $(this).addClass("active");
     const index = tabs.index(this);
     $(".content").removeClass("show").eq(index).addClass("show");
-  })
-})
+  });
+});

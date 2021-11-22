@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .container {
-  .profile {
+  .profile-area {
     margin-top: 20px;
     &__icon {
       text-align: center;
@@ -14,8 +14,7 @@
     }
 
     &__list {
-      background: gray;
-
+      border: 1px solid silver;
       ul {
         padding: 5px 0;
         display: flex;
@@ -37,21 +36,18 @@
   .tab-area {
     display: flex;
     justify-content: space-around;
-    background-color: #222e3e;
-    cursor: pointer;
     .tab {
       width: 300px;
       height: 30px;
       line-height: 30px;
       text-align: center;
-      color: white;
-      border-right: 1px solid #50637b;
-      border-left: 1px solid #222e3e;
+      opacity: 0.3;
+      cursor: pointer;
+
     }
     .tab.active {
-      background-color: #ccc;
-      color: #222e3e;
-      border: none;
+      border-bottom: 2px solid #007bff94;
+      opacity: 1;
     }
   }
   .content-area {
@@ -75,8 +71,7 @@
 @media screen and (max-width:425px) {
   .container {
     font-size: 10px;
-    .profile {
-      background: silver;
+    .profile-area {
       &__icon {
         img {
           width: 30%;
