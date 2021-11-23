@@ -21,10 +21,19 @@
 
 $(function() {
   const tabs = $(".tab");
-  $(".tab").on("click", function() {
+  $(".tab").click(function() {
     $(".active").removeClass("active");
     $(this).addClass("active");
     const index = tabs.index(this);
     $(".content").removeClass("show").eq(index).addClass("show");
+  });
+});
+
+$(function() {
+  $("#nav-open").click(function(){
+    $(".nav-container").removeClass("nav-close").addClass("nav-active");
+  });
+  $("#nav-close").click(function(){
+    $(".nav-container").removeClass("nav-active").addClass("nav-close");
   });
 });

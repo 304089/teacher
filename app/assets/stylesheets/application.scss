@@ -21,6 +21,11 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+  z-index: 1;
+}
+
 li {
   list-style: none;
 }
@@ -38,4 +43,65 @@ p {
 }
 .nav-item:hover {
   opacity: 0.3;
+}
+
+.header-area {
+  padding: 20px 40px;
+  &__logo {
+  }
+  &__nav {
+    #nav-open {
+      text-align: right;
+      i {
+        font-size: 40px;
+      }
+      p {
+        font-size: 15px;
+        position: relative;
+        left: 12px;
+        bottom: 5px;
+      }
+    }
+    #nav-close {
+      text-align: right;
+      i {
+        font-size: 40px;
+        position: relative;
+        right: 20px;
+        top: 10px;
+      }
+    }
+  }
+}
+
+// ヘッダーナビ
+.nav-close {
+  width: 40%;
+  background: silver;
+  height: 600px;
+  position: absolute;
+  right: 100;
+  top: 0;
+  right: -700px;
+  transition-duration: 0.8s
+}
+
+.nav-active {
+  width: 40%;
+  background: silver;
+  height: 600px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  transition-duration: 0.8s
+}
+
+@media screen and (max-width:425px) {
+  .header-area {
+    padding: 10px 20px;
+  }
+  .nav-container {
+    width: 70%;
+  }
 }

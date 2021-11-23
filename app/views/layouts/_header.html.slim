@@ -1,20 +1,9 @@
-header.shadow-sm
-  nav.navbar.navbar-expand-lg.navbar-light
-    .container
-      a.navbar-brand.p-3[href="/"]
-      button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"]
-        span.navbar-toggler-icon
-      #navbarNavDropdown.collapse.navbar-collapse
-        ul.navbar-nav.ml-auto
-          - if user_signed_in?
-            li.nav-item
-              = link_to '授業一覧', posts_path, class: 'nav-link text-dark'
-            li.nav-item
-              = link_to 'マイページ', user_path(current_user.id), class: 'nav-link text-dark'
-            li.nav-item
-              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark'
-          - else
-            li.nav-item
-              = link_to "新規登録", new_user_registration_path, class: 'nav-link text-dark'
-            li.nav-item
-              = link_to "ログイン", new_user_session_path, class: 'nav-link text-dark'
+.header-area
+  .header-area__logo
+  .header-area__nav
+    #nav-open
+      i.fas.fa-bars.menu-
+      p メニュー
+    .nav-container.nav-close
+      #nav-close
+        i.fas.fa-times
