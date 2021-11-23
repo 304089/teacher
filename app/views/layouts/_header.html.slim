@@ -14,19 +14,79 @@
             i.fas.fa-search
       .category
         p カテゴリーから探す
-        ul
-          li
-            p 国語
-            i.fas.fa-chevron-right
-          li
-            p 算数
-            i.fas.fa-chevron-right
-          li
-            p 理科
-            i.fas.fa-chevron-right
-          li
-            p 社会
-            i.fas.fa-chevron-right
-          li
-            p 英語
-            i.fas.fa-chevron-right
+        ul.category-list
+          li.detail-btn
+            .category-name
+              p 国語
+              i.fas.fa-chevron-down
+              i.fas.fa-chevron-up
+            ul.detail-list
+              li
+                = link_to posts_path do
+                  p ・現代文
+              li
+                = link_to posts_path do
+                  p ・古文
+              li
+                = link_to posts_path do
+                  p ・漢文
+          li.detail-btn
+            .category-name
+              p 数学
+              i.fas.fa-chevron-down
+              i.fas.fa-chevron-up
+            ul.detail-list
+              li
+                = link_to posts_path do
+                  p ・現代文
+              li
+                = link_to posts_path do
+                  p ・古文
+              li
+                = link_to posts_path do
+                  p ・漢文
+          li.detail-btn
+            .category-name
+              p 理科
+              i.fas.fa-chevron-down
+              i.fas.fa-chevron-up
+            ul.detail-list
+              li
+                = link_to posts_path do
+                  p ・現代文
+              li
+                = link_to posts_path do
+                  p ・古文
+              li
+                = link_to posts_path do
+                  p ・漢文
+          li.detail-btn
+            .category-name
+              p 社会
+              i.fas.fa-chevron-down
+              i.fas.fa-chevron-up
+            ul.detail-list
+              li
+                = link_to posts_path do
+                  p ・現代文
+              li
+                = link_to posts_path do
+                  p ・古文
+              li
+                = link_to posts_path do
+                  p ・漢文
+          li.detail-btn
+            .category-name
+              p 英語
+              i.fas.fa-chevron-down
+              i.fas.fa-chevron-up
+            ul.detail-list
+              li
+                = link_to posts_path do
+                  p ・現代文
+              li
+                = link_to posts_path do
+                  p ・古文
+              li
+                = link_to posts_path do
+                  p ・漢文

@@ -32,11 +32,26 @@ $(function() {
 $(function() {
   $("#nav-open").click(function(){
     $("body").css("background-color", "rgba(0,0,0,0.4)");
-    $(".nav-container").removeClass("nav-close").addClass("nav-active").css("background-color", "black");
+    $(".nav-container").removeClass("nav-close").addClass("nav-active").css("background-color", "#17682a");
 
   });
   $("#nav-close").click(function(){
     $(".nav-container").removeClass("nav-active").addClass("nav-close");
     $("body").css("background-color", "white");
   });
+});
+
+$(function() {
+    $(".detail-btn").click(function() {
+      $(this).find(".detail-list").slideToggle();
+      if ($(this).find(".detail-list").hasClass("open")){
+        $(this).find(".detail-list").removeClass("open");
+        $(this).find(".fa-chevron-down").show();
+        $(this).find(".fa-chevron-up").hide();
+      } else {
+        $(this).find(".detail-list").addClass("open")
+        $(this).find(".fa-chevron-up").show();
+        $(this).find(".fa-chevron-down").hide();
+      }
+    });
 });
