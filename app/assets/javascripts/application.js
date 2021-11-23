@@ -31,9 +31,12 @@ $(function() {
 
 $(function() {
   $("#nav-open").click(function(){
-    $(".nav-container").removeClass("nav-close").addClass("nav-active");
+    $("body").css("background-color", "rgba(0,0,0,0.4)");
+    $(".nav-container").removeClass("nav-close").addClass("nav-active").css("background-color", "black");
+
   });
   $("#nav-close").click(function(){
     $(".nav-container").removeClass("nav-active").addClass("nav-close");
+    $("body").css("background-color", "white");
   });
 });

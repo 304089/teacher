@@ -2,8 +2,31 @@
   .header-area__logo
   .header-area__nav
     #nav-open
-      i.fas.fa-bars.menu-
+      i.fas.fa-bars.menu-var
       p メニュー
     .nav-container.nav-close
       #nav-close
         i.fas.fa-times
+      .form
+        = form_with url: posts_path, method: :get,  local: true do |f|
+          = f.text_field :keyword, placeholder: "キーワードを入力してください", class: "search_form"
+          = f.button :type => "submit", style: 'border-style: none;', class: "search-btn" do
+            i.fas.fa-search
+      .category
+        p カテゴリーから探す
+        ul
+          li
+            p 国語
+            i.fas.fa-chevron-right
+          li
+            p 算数
+            i.fas.fa-chevron-right
+          li
+            p 理科
+            i.fas.fa-chevron-right
+          li
+            p 社会
+            i.fas.fa-chevron-right
+          li
+            p 英語
+            i.fas.fa-chevron-right

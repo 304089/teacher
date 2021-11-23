@@ -23,6 +23,7 @@
 
 body {
   position: relative;
+  transition-duration: 0.8s;
   z-index: 1;
 }
 
@@ -50,7 +51,9 @@ p {
   &__logo {
   }
   &__nav {
+    color: white;
     #nav-open {
+      color: black;
       text-align: right;
       i {
         font-size: 40px;
@@ -67,17 +70,66 @@ p {
       i {
         font-size: 40px;
         position: relative;
-        right: 20px;
-        top: 10px;
+      }
+    }
+
+    .nav-container {
+      padding: 10px;
+      .form {
+        margin: 10px auto;
+        width: 100%;
+        .search_form {
+          position: relative;
+          padding-left: 22px;
+          width: 90%;
+          height: 30px;
+        }
+        .search-btn {
+          z-index: 12;
+          position: absolute;
+          left: 15px;
+          top: 64px;
+          background: none;
+        }
+
+      }
+      .category {
+        p {
+          font-size: 30px;
+          font-weight: bold;
+        }
+        ul {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          width: 100%;
+          margin: 10px 0;
+          gap: 0 5px;
+
+          li {
+            width: 45%;
+            padding: 5px 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            border-bottom: 1px solid silver;
+            p {
+              margin: 0;
+            }
+            i {
+              position: relative;
+              top: 15px;
+            }
+          }
+        }
       }
     }
   }
 }
 
-// ヘッダーナビ
+// ヘッダーナビ開閉用
 .nav-close {
-  width: 40%;
-  background: silver;
+  width: 25%;
   height: 600px;
   position: absolute;
   right: 100;
@@ -87,8 +139,7 @@ p {
 }
 
 .nav-active {
-  width: 40%;
-  background: silver;
+  width: 25%;
   height: 600px;
   position: absolute;
   right: 0;
@@ -97,11 +148,34 @@ p {
   transition-duration: 0.8s
 }
 
+
+
 @media screen and (max-width:425px) {
   .header-area {
     padding: 10px 20px;
   }
   .nav-container {
     width: 70%;
+    .form {
+      .search_form {
+        width: 100%!important;
+        font-size: 12px!important;
+        height: 30px!important;
+      }
+      .search-btn {
+      }
+    }
+    .category {
+      p {
+        font-size: 20px!important;
+      }
+      ul {
+        li {
+          i{
+            top: 8px!important;
+          }
+        }
+      }
+    }
   }
 }
