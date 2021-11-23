@@ -80,6 +80,7 @@ p {
 
     .nav-container {
       padding: 10px;
+      min-height: 100vh;
       .form {
         margin: 10px auto;
         width: 100%;
@@ -159,7 +160,6 @@ p {
 // ヘッダーナビ開閉用
 .nav-close {
   width: 25%;
-  height: 600px;
   position: absolute;
   right: 100;
   top: 0;
@@ -169,7 +169,6 @@ p {
 
 .nav-active {
   width: 25%;
-  height: 600px;
   position: absolute;
   right: 0;
   top: 0;

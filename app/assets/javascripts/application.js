@@ -19,8 +19,9 @@
 //= require_tree .
 /*global $*/
 
+// マイページのコンテンツ選択をタブ化
 $(function() {
-  const tabs = $(".tab");
+  var tabs = $(".tab");
   $(".tab").click(function() {
     $(".active").removeClass("active");
     $(this).addClass("active");
@@ -29,6 +30,7 @@ $(function() {
   });
 });
 
+// メニューバーをスライドイン・アウト
 $(function() {
   $("#nav-open").click(function(){
     $("body").css("background-color", "rgba(0,0,0,0.4)");
@@ -41,15 +43,17 @@ $(function() {
   });
 });
 
+// カテゴリーをさらに細分化したもののスライド
 $(function() {
+  var list = (".detail-list");
     $(".detail-btn").click(function() {
-      $(this).find(".detail-list").slideToggle();
-      if ($(this).find(".detail-list").hasClass("open")){
-        $(this).find(".detail-list").removeClass("open");
+      $(this).find(list).slideToggle();
+      if ($(this).find(list).hasClass("open")){
+        $(this).find(list).removeClass("open");
         $(this).find(".fa-chevron-down").show();
         $(this).find(".fa-chevron-up").hide();
       } else {
-        $(this).find(".detail-list").addClass("open")
+        $(this).find(list).addClass("open");
         $(this).find(".fa-chevron-up").show();
         $(this).find(".fa-chevron-down").hide();
       }

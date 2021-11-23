@@ -5,29 +5,44 @@
       = attachment_image_tag @user, :profile_image, size: "200x200", fallback: "no_image.jpg", class: "rounded-circle"
     .profile-area__name
       = @user.name
+    .profile-area__edit
+      - if current_user == @user
+        = link_to edit_user_path(@user) do
+          p.edit-btn プロフィール編集
     .profile-area__list
       ul
         li
-          = @user.name
-          p フォロワー
-        li い
-        li う
-    .profile-area__introduction
-      p あああああああああ
+          p #{@user.name}フォロー
+        li
+          p #{@user.name}フォロワー
   .tab-area
     .tab.active
-      タブ１
+      p 自己紹介
     .tab
-      タブ２
+      p 投稿授業
     .tab
-      タブ３
+      p お気に入り
   .content-area
     .content.show
-      タブ１の中身です
+      = @user.introduction
     .content
-      タブ２の中身です
+      .contents
+        - @posts.each do |post|
+          .contents__list
+            = link_to post_path(post) do
+              .contents__list__thumbnail
+                img src="http://img.youtube.com/vi/#{post.youtube_url}/hqdefault.jpg"
+              .contents__list__title
+                = post.title
     .content
-      タブ３の中身です
+      .contents
+        - @posts.each do |post|
+          .contents__list
+            = link_to post_path(post) do
+              .contents__list__thumbnail
+                img src="http://img.youtube.com/vi/#{post.youtube_url}/hqdefault.jpg"
+              .contents__list__title
+                = post.title
   .link-area
     = link_to new_post_path do
       .btn.btn-success 授業を投稿する
