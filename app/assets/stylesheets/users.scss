@@ -4,7 +4,7 @@
 .container {
   padding: 20px!important;
   position: relative;
-  .profile-area {
+  .profile-area, .session-area {
     margin-top: 20px;
     &__icon {
       text-align: center;
@@ -90,14 +90,18 @@
   }
 
   // 編集画面
+  .session-form {
+    width: 30%!important;
+  }
   .form-area {
+    border-radius: 5px;
     width: 70%;
-    min-height: 80vh;
     background: white;
     margin: 0 auto;
-    position: absolute;
     display: none;
-    top: 0;
+    position: fixed;
+    z-index: 50;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
@@ -111,6 +115,13 @@
       &:hover{
         opacity: 0.5;
         cursor: pointer;
+      }
+    }
+
+    .session-name {
+      p {
+        font-weight: bold;
+        font-size: 25px;
       }
     }
     &__form {
@@ -160,6 +171,13 @@
       .content {
 
       }
+    }
+    .session-form {
+      width: 80%!important;
+    }
+    .form-area {
+      position: absolute;
+      top: 0;
     }
   }
 }

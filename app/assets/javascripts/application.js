@@ -34,6 +34,7 @@ $(function() {
 $(function() {
   $("#nav-open").click(function(){
     $("body").css("background-color", "rgba(0,0,0,0.4)");
+    $(".form-area").fadeOut(1000);
     $(".nav-container").removeClass("nav-close").addClass("nav-active").css("background-color", "#17682a");
 
   });
@@ -88,7 +89,7 @@ $(function() {
     $("#post-btn").click(function() {
         $("#post-form").show(1000);
         $("body").css("background-color", "rgba(0,0,0,0.4)");
-    })
+    });
 });
 
 
@@ -97,5 +98,39 @@ $(function() {
     $(".close-btn").click(function() {
         $("#post-form").hide(1000);
         $("body").css("background-color", "white");
-    })
+    });
+});
+
+// 新規登録画面（開く）
+$(function() {
+    $("#signUp-btn").click(function() {
+        $("#signUp-form").fadeIn(1000);
+        $(".nav-container").removeClass("nav-active").addClass("nav-close");
+        $("body").css("background-color", "rgba(0,0,0,0.4)");
+    });
+});
+
+// 新規登録画面（閉じる）
+$(function() {
+    $(".close-btn").click(function() {
+        $("#signUp-form").fadeOut(1000);
+        $("body").css("background-color", "white");
+    });
+});
+
+// ログイン画面（開く）
+$(function() {
+    $("#signIn-btn").click(function() {
+        $("#signIn-form").fadeIn(1000);
+        $(".nav-container").removeClass("nav-active").addClass("nav-close");
+        $("body").css("background-color", "rgba(0,0,0,0.4)");
+    });
+});
+
+// ログイン画面（閉じる）
+$(function() {
+    $(".close-btn").click(function() {
+        $("#signIn-form").fadeOut(1000);
+        $("body").css("background-color", "white");
+    });
 });

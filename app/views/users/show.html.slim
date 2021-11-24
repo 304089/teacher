@@ -27,7 +27,7 @@
       p お気に入り
   .content-area
     .content.show
-      = safe_join(@user.introduction.split("\n"),tag(:br))
+      = @user.introduction
     .content
       .contents
         - @posts.each do |post|

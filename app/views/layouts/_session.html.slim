@@ -1,0 +1,39 @@
+.container
+  .session-area
+    .form-area.session-form#signUp-form
+      .close-btn
+        i.fas.fa-times
+      .session-name
+        p.text-center 新規登録
+      .form-area__form
+        = form_with model: User.new, url: user_registration_path, method: :post, local: true do |f|
+          .item
+            = f.label :name, "ユーザー名"
+            = f.text_field :name
+          .item
+            = f.label :email, "メールアドレス"
+            = f.email_field :email
+          .item
+            = f.label :password, "パスワード（６文字以上）"
+            = f.password_field :password
+            = f.label :password_confirmation, "パスワード（確認用）"
+            = f.password_field :password_confirmation
+          .item.decision
+            = f.submit "登録する", class: "btn btn-success"
+.container
+  .session-area
+    .form-area.session-form#signIn-form
+      .close-btn
+        i.fas.fa-times
+      .session-name
+        p.text-center ログイン
+      .form-area__form
+        = form_with model: User.new, url: user_session_path, method: :post, local: true do |f|
+          .item
+            = f.label :email, "メールアドレス"
+            = f.email_field :email
+          .item
+            = f.label :password, "パスワード（６文字以上）"
+            = f.password_field :password
+          .item.decision
+            = f.submit "ログイン", class: "btn btn-success"

@@ -7,6 +7,12 @@
     .nav-container.nav-close
       #nav-close
         i.fas.fa-times
+      .session
+        - unless user_signed_in?
+          p.session-btn#signUp-btn 新規登録
+          p.session-btn#signIn-btn ログイン
+        - else
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
       .form
         = form_with url: posts_path, method: :get,  local: true do |f|
           = f.text_field :keyword, placeholder: "キーワードを入力してください", class: "search_form"
@@ -33,51 +39,6 @@
           li.detail-btn
             .category-name
               p 数学
-              i.fas.fa-chevron-down
-              i.fas.fa-chevron-up
-            ul.detail-list
-              li
-                = link_to posts_path do
-                  p ・現代文
-              li
-                = link_to posts_path do
-                  p ・古文
-              li
-                = link_to posts_path do
-                  p ・漢文
-          li.detail-btn
-            .category-name
-              p 理科
-              i.fas.fa-chevron-down
-              i.fas.fa-chevron-up
-            ul.detail-list
-              li
-                = link_to posts_path do
-                  p ・現代文
-              li
-                = link_to posts_path do
-                  p ・古文
-              li
-                = link_to posts_path do
-                  p ・漢文
-          li.detail-btn
-            .category-name
-              p 社会
-              i.fas.fa-chevron-down
-              i.fas.fa-chevron-up
-            ul.detail-list
-              li
-                = link_to posts_path do
-                  p ・現代文
-              li
-                = link_to posts_path do
-                  p ・古文
-              li
-                = link_to posts_path do
-                  p ・漢文
-          li.detail-btn
-            .category-name
-              p 英語
               i.fas.fa-chevron-down
               i.fas.fa-chevron-up
             ul.detail-list

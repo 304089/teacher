@@ -110,9 +110,8 @@ p {
         }
         .search-btn {
           z-index: 12;
-          position: absolute;
-          left: 15px;
-          top: 64px;
+          position: relative;
+          right: 300px;
           background: none;
         }
 
@@ -209,6 +208,9 @@ p {
         height: 30px!important;
       }
       .search-btn {
+        position: relative;
+        left: 8px;
+        bottom: 26px;
       }
     }
     .category {
