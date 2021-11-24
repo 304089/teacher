@@ -4,9 +4,14 @@
       = attachment_image_tag @user, :profile_image, size: "200x200", fallback: "no_image.jpg", class: "rounded-circle"
     .profile-area__name
       = @user.name
-    .profile-area__edit
+    .profile-area__link
       - if current_user == @user
-          p.edit-btn プロフィール編集
+        .profile-area__link__dm.profile-btn
+          p#dm-btn DM
+        .profile-area__link__post.profile-btn
+          p#post-btn 授業投稿
+        .profile-area__link__edit.profile-btn
+          p#edit-btn プロフィール編集
     .profile-area__list
       ul
         li
@@ -43,7 +48,7 @@
                 = post.title
 
   .form-area#edit-form
-    #close-btn
+    .close-btn
       i.fas.fa-times
     .form-area__form
       = form_with model: @user, local: true do |f|
@@ -57,3 +62,20 @@
           = f.text_area :introduction
         .item.decision
           = f.submit "更新する", class: "btn btn-success"
+
+  .form-area#post-form
+    .close-btn
+      i.fas.fa-times
+    .form-area__form
+      = form_with model: @post, url: posts_path, local: true do |f|
+        .item
+          = f.label :youtube_url, "YouTube URL"
+          = f.text_field :youtube_url, placeholder: 'youtube_url'
+        .item
+          = f.label :title, "タイトル"
+          = f.text_field :title
+        .item.intruduction
+          = f.label :intruduction, "説明"
+          = f.text_area :introduction
+        .item.decision
+          = f.submit "投稿する", class: "btn btn-success"

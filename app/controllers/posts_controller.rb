@@ -11,7 +11,8 @@ class PostsController < ApplicationController
     @post.youtube_url = url
     @post.user_id = current_user.id
     @post.save
-    redirect_to posts_path
+    flash[:notice] = "授業を投稿しました。"
+    redirect_to user_path(@post.user)
   end
 
   def show

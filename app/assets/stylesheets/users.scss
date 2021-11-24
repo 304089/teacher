@@ -27,16 +27,32 @@
       }
     }
 
-    &__edit {
-      text-align: center;
-      width: fit-content;
-      margin: 10px auto;
-      border: 1px solid gray;
-      padding: 5px 20px;
-      border-radius: 10px;
-      &:hover {
-        opacity: 0.5;
-        cursor: pointer;
+    &__link {
+      display: flex;
+      margin: 0 auto;
+      width: 60%;
+      justify-content: space-around;
+      &__dm {
+
+      }
+      &__post {
+
+      }
+
+      &__edit {
+
+      }
+
+      .profile-btn {
+        text-align: center;
+        margin: 10px auto;
+        border: 1px solid gray;
+        padding: 5px 20px;
+        border-radius: 10px;
+        &:hover {
+          opacity: 0.5;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -86,7 +102,7 @@
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
-    #close-btn {
+    .close-btn {
       width: fit-content;
       font-size: 40px;
       margin: 0 0 0 auto;
@@ -135,10 +151,8 @@
       &__name {
         font-size: 20px;
       }
-      &__introduction {
-        p {
-
-        }
+      &__link {
+        width: 100%;
       }
     }
     .content-area {

@@ -3,10 +3,10 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if current_user
-      flash[:notice] = "ログインしました。"
+      flash.now[:notice] = "ログインしました。"
       user_path(current_user)
     else
-      flash[:notice] = "登録が完了しました。"
+      flash.now[:notice] = "登録が完了しました。"
       user_path(current_user)
     end
   end

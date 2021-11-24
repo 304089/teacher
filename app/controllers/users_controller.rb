@@ -1,14 +1,16 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @posts = Post.all.includes(:user)
+    @post = Post.new
+    @posts = Post.all.order(id: "DESC").includes(:user)
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "プロフィールを更新しました。"
-      redirect_to user_path(@user)
+      @posts = Post.all.includes(:user)
+      redirect_to request.referer
     else
       render "show"
     end

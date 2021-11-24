@@ -60,22 +60,42 @@ $(function() {
     });
 });
 
+// プロフィール編集画面（開く）
 $(function() {
-    $(".profile-area__edit").click(function() {
-        $(".form-area").show(1000);
+    $("#edit-btn").click(function() {
+        $("#edit-form").show(1000);
         $("body").css("background-color", "rgba(0,0,0,0.4)");
     })
 });
 
+// プロフィール編集画面（閉じる）
 $(function() {
-    $("#close-btn").click(function() {
-        $(".form-area").hide(1000);
+    $(".close-btn").click(function() {
+        $("#edit-form").hide(1000);
         $("body").css("background-color", "white");
     })
 });
 
+// プロフィール編集成功後、ウィンドウ閉じる
 $(function() {
-    $("#editform form").submit(function(){
-      $(".form-area").hide();
+    $("#edit-form form").submit(function(){
+      $(".form-area").hide(1000);
     });
 })
+
+// 投稿画面（開く）
+$(function() {
+    $("#post-btn").click(function() {
+        $("#post-form").show(1000);
+        $("body").css("background-color", "rgba(0,0,0,0.4)");
+    })
+});
+
+
+// 投稿画面（閉じる）
+$(function() {
+    $(".close-btn").click(function() {
+        $("#post-form").hide(1000);
+        $("body").css("background-color", "white");
+    })
+});
