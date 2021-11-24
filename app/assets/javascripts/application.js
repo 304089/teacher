@@ -59,3 +59,23 @@ $(function() {
       }
     });
 });
+
+$(function() {
+    $(".profile-area__edit").click(function() {
+        $(".form-area").show(1000);
+        $("body").css("background-color", "rgba(0,0,0,0.4)");
+    })
+});
+
+$(function() {
+    $("#close-btn").click(function() {
+        $(".form-area").hide(1000);
+        $("body").css("background-color", "white");
+    })
+});
+
+$(function() {
+    $("#editform form").submit(function(){
+      $(".form-area").hide();
+    });
+})

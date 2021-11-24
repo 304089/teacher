@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .container {
   padding: 20px!important;
+  position: relative;
   .profile-area {
     margin-top: 20px;
     &__icon {
@@ -33,10 +34,9 @@
       border: 1px solid gray;
       padding: 5px 20px;
       border-radius: 10px;
-      a {
-        p {
-
-        }
+      &:hover {
+        opacity: 0.5;
+        cursor: pointer;
       }
     }
   }
@@ -68,7 +68,50 @@
     }
     .content.show {
       margin-top: 50px;
+      font-size: 20px;
       display: block;
+    }
+  }
+
+  // 編集画面
+  .form-area {
+    width: 70%;
+    min-height: 80vh;
+    background: white;
+    margin: 0 auto;
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    #close-btn {
+      width: fit-content;
+      font-size: 40px;
+      margin: 0 0 0 auto;
+      position: relative;
+      left: -20px;
+      &:hover{
+        opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+    &__form {
+      margin: 0 auto;
+      .item {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 15px auto;
+      }
+      textarea {
+        height: 300px;
+      }
+      .decision {
+        width: 40%;
+        margin: 30px auto;
+      }
     }
   }
 }
@@ -101,7 +144,7 @@
     .content-area {
       min-height: 100px;
       .content {
-        
+
       }
     }
   }

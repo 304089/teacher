@@ -44,6 +44,11 @@ p {
   margin: 0;
 }
 
+.flash {
+  text-align: center;
+  color: green;
+}
+
 .nav-item {
   font-weight: bold;
 }
@@ -59,24 +64,37 @@ p {
     color: white;
     #nav-open {
       color: black;
-      text-align: right;
+      width: fit-content;
+      margin: 0 0 0 auto;
+      &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+      }
       i {
         font-size: 40px;
+        position: relative;
+        left: 12px;
       }
       p {
         font-size: 15px;
         position: relative;
-        left: 12px;
+        left: -10px;
         bottom: 5px;
       }
     }
     #nav-close {
       text-align: right;
+      width: fit-cotent;
       i {
         font-size: 40px;
         position: relative;
       }
+      &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+      }
     }
+
 
     .nav-container {
       padding: 10px;
