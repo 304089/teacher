@@ -62,7 +62,7 @@ p {
   }
   &__nav {
     color: white;
-    #nav-open {
+    .nav-open {
       color: black;
       width: fit-content;
       margin: 0 0 0 auto;
@@ -82,7 +82,7 @@ p {
         bottom: 5px;
       }
     }
-    #nav-close {
+    .nav-close {
       text-align: right;
       width: fit-cotent;
       i {
@@ -99,6 +99,7 @@ p {
     .nav-container {
       padding: 10px;
       min-height: 100vh;
+      display: none;
       .form {
         margin: 10px auto;
         width: 100%;
@@ -180,17 +181,17 @@ p {
   position: absolute;
   right: 100;
   top: 0;
-  right: -700px;
-  transition-duration: 0.8s
+  right: 0;
+  overflow-x: hidden;
 }
 
 .nav-active {
   width: 25%;
+  overflow-x: hidden;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 10;
-  transition-duration: 0.8s
 }
 
 

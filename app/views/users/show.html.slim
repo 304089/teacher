@@ -7,11 +7,11 @@
     .profile-area__link
       - if current_user == @user
         .profile-area__link__dm.profile-btn
-          p#dm-btn DM
+          p.dm-btn DM
         .profile-area__link__post.profile-btn
-          p#post-btn 授業投稿
+          p.post-btn 授業投稿
         .profile-area__link__edit.profile-btn
-          p#edit-btn プロフィール編集
+          p.edit-btn プロフィール編集
     .profile-area__list
       ul
         li
@@ -27,7 +27,10 @@
       p お気に入り
   .content-area
     .content.show
-      = @user.introduction
+      - if @user.introduction.nil?
+        = @user.introduction
+      - else
+        = safe_join(@user.introduction.split("\n"),tag(:br))
     .content
       .contents
         - @posts.each do |post|
@@ -47,7 +50,7 @@
               .contents__list__title
                 = post.title
 
-  .form-area#edit-form
+  .form-area.edit-form
     .close-btn
       i.fas.fa-times
     .form-area__form
@@ -63,7 +66,7 @@
         .item.decision
           = f.submit "更新する", class: "btn btn-success"
 
-  .form-area#post-form
+  .form-area.post-form
     .close-btn
       i.fas.fa-times
     .form-area__form

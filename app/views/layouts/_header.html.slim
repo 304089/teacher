@@ -1,18 +1,23 @@
 .header-area
   .header-area__logo
   .header-area__nav
-    #nav-open
+    .nav-open
       i.fas.fa-bars.menu-var
       p メニュー
-    .nav-container.nav-close
-      #nav-close
+    .nav-container
+      .nav-close
         i.fas.fa-times
       .session
         - unless user_signed_in?
-          p.session-btn#signUp-btn 新規登録
-          p.session-btn#signIn-btn ログイン
+          p.session-btn.signUp-btn 新規登録
+          p.session-btn.signIn-btn ログイン
         - else
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
+          p
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, local: true
+          p
+            = link_to "トップページ", root_path, local: true
+          p
+            = link_to "マイページ", user_path(current_user), local: true
       .form
         = form_with url: posts_path, method: :get,  local: true do |f|
           = f.text_field :keyword, placeholder: "キーワードを入力してください", class: "search_form"
