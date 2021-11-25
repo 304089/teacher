@@ -1,5 +1,18 @@
-  .container
+  .container.show-container
     .content
+      .contaent__head
+        .content__head__auther
+          p 投稿者:
+          = link_to user_path(@post.user) do
+            = attachment_image_tag @post.user, :profile_image, size: "25x25", fallback: "no_image.jpg", class: "rounded-circle"
+            = @post.user.name
+        .content__head__favorite
+          - if @post.favorited_by?(current_user)
+            = link_to post_favorite_path(@post), method: :delete do
+              p 🖤
+          - else
+            = link_to post_favorite_path(@post), method: :post do
+              p 🤍
       .content__title
         = @post.title
       .content__movie

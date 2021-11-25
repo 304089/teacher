@@ -1,8 +1,14 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-container {
+  background: white;
+  color: black;
+  padding: 0!important;
+  border-radius: 10px!important;
+}
 .container {
-  padding: 20px!important;
+  padding: 20px;
   position: relative;
   bottom: 150px;
   .profile-area, .session-area {
@@ -80,11 +86,13 @@
     font-size: 30px;
     text-align: center;
     min-height: 200px;
+    background: #105410;
+    color: white;
     .content {
       display: none;
     }
     .content.show {
-      margin-top: 50px;
+      padding-top: 20px;
       font-size: 20px;
       display: block;
     }
@@ -95,6 +103,8 @@
     width: 30%!important;
   }
   .form-area {
+    color: black;
+    border: 1px solid;
     border-radius: 5px;
     width: 70%;
     background: white;

@@ -45,7 +45,7 @@ $(function() {
   $(document).on('click', '.nav-close', function(){
     $(".nav-container").removeClass("nav-active").addClass("nav-close");
     $(".nav-container").fadeOut();
-    $("body").css("background-color", "white");
+    $("body").css("background-color", "#105410");
   });
 });
 
@@ -78,7 +78,7 @@ $(function() {
 $(function() {
     $(document).on('click', '.close-btn', function(){
         $(".edit-form").hide(1000);
-        $("body").css("background-color", "white");
+        $("body").css("background-color", "#105410");
     })
 });
 
@@ -102,7 +102,7 @@ $(function() {
 $(function() {
     $(document).on('click', '.close-btn', function(){
         $(".post-form").hide(1000);
-        $("body").css("background-color", "white");
+        $("body").css("background-color", "#105410");
     });
 });
 
@@ -120,7 +120,7 @@ $(function() {
 $(function() {
     $(document).on('click', '.close-btn', function(){
         $(".signUp-form").fadeOut(1000);
-        $("body").css("background-color", "white");
+        $("body").css("background-color", "#105410");
     });
 });
 
@@ -138,7 +138,7 @@ $(function() {
 $(function() {
     $(document).on('click', '.close-btn', function(){
         $(".signIn-form").fadeOut(1000);
-        $("body").css("background-color", "white");
+        $("body").css("background-color", "#105410");
     });
 });
 

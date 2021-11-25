@@ -25,6 +25,8 @@ body {
   position: relative;
   transition-duration: 0.8s;
   z-index: 1;
+  background: #105410;
+  color: white;
 }
 
 li {
@@ -63,7 +65,6 @@ p {
   &__nav {
     color: white;
     .nav-open {
-      color: black;
       width: fit-content;
       margin: 0 0 0 auto;
       &:hover {
@@ -78,7 +79,6 @@ p {
       p {
         font-size: 15px;
         position: relative;
-        left: -10px;
         bottom: 5px;
       }
     }
