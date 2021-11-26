@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @post = Post.new
     @posts = Post.all.order(id: "DESC").includes(:user)
+    @favorite_posts = Post.joins(:favorites).where(favorites: {user_id: @user.id})
   end
 
   def update

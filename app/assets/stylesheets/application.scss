@@ -60,7 +60,18 @@ p {
 
 .header-area {
   padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  background: #46340b;
   &__logo {
+    img {
+      width: -webkit-fill-available;
+    }
+    img:hover {
+      opacity: 0.7;
+    }
+    height: 10%;
+    width: 10%;
   }
   &__nav {
     color: white;

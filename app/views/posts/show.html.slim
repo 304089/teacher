@@ -1,6 +1,6 @@
   .container.show-container
     .content
-      .contaent__head
+      .content__head
         .content__head__auther
           p 投稿者:
           = link_to user_path(@post.user) do
@@ -9,10 +9,10 @@
         .content__head__favorite
           - if @post.favorited_by?(current_user)
             = link_to post_favorite_path(@post), method: :delete do
-              p 🖤
+              i.fas.fa-heart.text-danger
           - else
             = link_to post_favorite_path(@post), method: :post do
-              p 🤍
+              i.far.fa-heart
       .content__title
         = @post.title
       .content__movie
